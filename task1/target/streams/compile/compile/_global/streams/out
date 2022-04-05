@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/scala/FourHops.scala:30:23: not found: value matrixMultiply[0m
+[0m[[0m[31merror[0m] [0m[0m        val two_hop = matrixMultiply(graph, totalVertices)[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/scala/FourHops.scala:33:21: not found: value matrixMultiply[0m
+[0m[[0m[31merror[0m] [0m[0m        val quads = matrixMultiply(two_hop, totalVertices)[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
