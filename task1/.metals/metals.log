@@ -2064,3 +2064,175 @@ scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
 
 2022.04.05 22:51:53 INFO  compiling task1 (1 scala source)[0m
 2022.04.05 22:51:55 INFO  time: compiled task1 in 1.67s[0m
+Apr 05, 2022 10:56:07 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Apr 05, 2022 10:56:07 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$handleError
+SEVERE: bad constant pool tag 19 at byte 57
+scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
+	at scala.reflect.internal.Reporting$class.abort(Reporting.scala:59)
+	at scala.reflect.internal.SymbolTable.abort(SymbolTable.scala:16)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.errorBadTag(ClassfileParser.scala:356)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.<init>(ClassfileParser.scala:185)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$classfileParser$.newConstantPool(SymbolLoaders.scala:317)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parse(ClassfileParser.scala:139)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply$mcV$sp(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader.doComplete(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:211)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1535)
+	at scala.reflect.internal.Symbols$Symbol.tpeHK(Symbols.scala:1470)
+	at scala.reflect.internal.Types$Type.computeMemberType(Types.scala:699)
+	at scala.reflect.internal.Types$Type.memberType(Types.scala:696)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$OnTypeError.onTypeError(Global.scala:1357)
+	at scala.tools.nsc.interactive.Global$Members.add(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$addScopeMember$1(Global.scala:1033)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1050)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1049)
+	at scala.reflect.internal.Scopes$Scope.foreach(Scopes.scala:373)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$scopeMembers(Global.scala:1049)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1254)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:417)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:58)
+
+Apr 05, 2022 10:56:17 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Apr 05, 2022 10:56:17 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$handleError
+SEVERE: bad constant pool tag 19 at byte 57
+scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
+	at scala.reflect.internal.Reporting$class.abort(Reporting.scala:59)
+	at scala.reflect.internal.SymbolTable.abort(SymbolTable.scala:16)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.errorBadTag(ClassfileParser.scala:356)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.<init>(ClassfileParser.scala:185)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$classfileParser$.newConstantPool(SymbolLoaders.scala:317)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parse(ClassfileParser.scala:139)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply$mcV$sp(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader.doComplete(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:211)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1535)
+	at scala.reflect.internal.Symbols$Symbol.tpeHK(Symbols.scala:1470)
+	at scala.reflect.internal.Types$Type.computeMemberType(Types.scala:699)
+	at scala.reflect.internal.Types$Type.memberType(Types.scala:696)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$OnTypeError.onTypeError(Global.scala:1357)
+	at scala.tools.nsc.interactive.Global$Members.add(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$addScopeMember$1(Global.scala:1033)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1050)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1049)
+	at scala.reflect.internal.Scopes$Scope.foreach(Scopes.scala:373)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$scopeMembers(Global.scala:1049)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1254)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:417)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:58)
+
+Apr 05, 2022 10:56:19 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Apr 05, 2022 10:56:19 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$handleError
+SEVERE: bad constant pool tag 19 at byte 57
+scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
+	at scala.reflect.internal.Reporting$class.abort(Reporting.scala:59)
+	at scala.reflect.internal.SymbolTable.abort(SymbolTable.scala:16)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.errorBadTag(ClassfileParser.scala:356)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.<init>(ClassfileParser.scala:185)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$classfileParser$.newConstantPool(SymbolLoaders.scala:317)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parse(ClassfileParser.scala:139)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply$mcV$sp(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader.doComplete(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:211)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1535)
+	at scala.reflect.internal.Symbols$Symbol.tpeHK(Symbols.scala:1470)
+	at scala.reflect.internal.Types$Type.computeMemberType(Types.scala:699)
+	at scala.reflect.internal.Types$Type.memberType(Types.scala:696)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$OnTypeError.onTypeError(Global.scala:1357)
+	at scala.tools.nsc.interactive.Global$Members.add(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$addScopeMember$1(Global.scala:1033)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1050)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1049)
+	at scala.reflect.internal.Scopes$Scope.foreach(Scopes.scala:373)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$scopeMembers(Global.scala:1049)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1254)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:417)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:58)
+
+Apr 05, 2022 10:57:17 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Apr 05, 2022 10:57:17 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$handleError
+SEVERE: bad constant pool tag 19 at byte 57
+scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
+	at scala.reflect.internal.Reporting$class.abort(Reporting.scala:59)
+	at scala.reflect.internal.SymbolTable.abort(SymbolTable.scala:16)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.errorBadTag(ClassfileParser.scala:356)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.<init>(ClassfileParser.scala:185)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$classfileParser$.newConstantPool(SymbolLoaders.scala:317)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parse(ClassfileParser.scala:139)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply$mcV$sp(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader.doComplete(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:211)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1535)
+	at scala.reflect.internal.Symbols$Symbol.tpeHK(Symbols.scala:1470)
+	at scala.reflect.internal.Types$Type.computeMemberType(Types.scala:699)
+	at scala.reflect.internal.Types$Type.memberType(Types.scala:696)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$OnTypeError.onTypeError(Global.scala:1357)
+	at scala.tools.nsc.interactive.Global$Members.add(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$addScopeMember$1(Global.scala:1033)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1050)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1049)
+	at scala.reflect.internal.Scopes$Scope.foreach(Scopes.scala:373)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$scopeMembers(Global.scala:1049)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1254)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:417)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:58)
+
+Apr 05, 2022 10:57:24 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Apr 05, 2022 10:57:25 PM scala.meta.internal.pc.CompilerAccess scala$meta$internal$pc$CompilerAccess$$handleError
+SEVERE: bad constant pool tag 19 at byte 57
+scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
+	at scala.reflect.internal.Reporting$class.abort(Reporting.scala:59)
+	at scala.reflect.internal.SymbolTable.abort(SymbolTable.scala:16)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.errorBadTag(ClassfileParser.scala:356)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.<init>(ClassfileParser.scala:185)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$classfileParser$.newConstantPool(SymbolLoaders.scala:317)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parse(ClassfileParser.scala:139)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply$mcV$sp(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader$$anonfun$doComplete$2.apply(SymbolLoaders.scala:347)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader.doComplete(SymbolLoaders.scala:347)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:211)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1535)
+	at scala.reflect.internal.Symbols$Symbol.tpeHK(Symbols.scala:1470)
+	at scala.reflect.internal.Types$Type.computeMemberType(Types.scala:699)
+	at scala.reflect.internal.Types$Type.memberType(Types.scala:696)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$Members$$anonfun$19.apply(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global$OnTypeError.onTypeError(Global.scala:1357)
+	at scala.tools.nsc.interactive.Global$Members.add(Global.scala:1004)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$addScopeMember$1(Global.scala:1033)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1050)
+	at scala.tools.nsc.interactive.Global$$anonfun$scala$tools$nsc$interactive$Global$$scopeMembers$1.apply(Global.scala:1049)
+	at scala.reflect.internal.Scopes$Scope.foreach(Scopes.scala:373)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$scopeMembers(Global.scala:1049)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1254)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:417)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:58)
+
+2022.04.05 23:17:56 INFO  compiling task1-test (1 scala source)[0m
+2022.04.05 23:17:56 INFO  time: compiled task1-test in 0.29s[0m

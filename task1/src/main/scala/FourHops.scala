@@ -65,10 +65,13 @@ object FourHops {
     Identifying index helps multiply correct elements of A and B.
     */
     def mmMapper(N: Int, index: (Int, Int)): List[((Int, Int), (Int, Int))] = {
+
+        val i = index._1
+        val j = index._2
         
-        val for_zero = (for(k <- 0 until N) yield (index, (0,k)))
+        val for_zero = (for(k <- 0 until N) yield ((i,k), (1,j)))
         
-        val for_one = (for(k <- 0 until N) yield (index, (1,k)))
+        val for_one = (for(k <- 0 until N) yield ((k,j), (0,i)))
 
         for_zero.toList ++ for_one.toList
 
@@ -85,12 +88,18 @@ object FourHops {
     greater than 0 else let it be 0. Refer to test3 and test4 for an example case.
     */
     def mmReducer(productElements: ((Int, Int), Iterable[(Int, Int)])): (Int, Int, Int) = {
+        // we go through our iterable and verify if we have common indices for both matrices. If it is the case, then a path exists
         val index = productElements._1
         val elements = productElements._2
 
-        
+        val grouped = elements.groupBy(_._1)
 
-        (0,0,0)
+        val matrix_a = grouped(1).map(_._2).toSet
+        val matrix_b = grouped(0).map(_._2).toSet
+
+        val value = matrix_a.intersect(matrix_b).size
+        (index._1,index._2,value)
+
     }
 //------------------------------------------------------------------------------    
     

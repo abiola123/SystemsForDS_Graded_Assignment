@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/scala/CorrectnessTests.scala:51:28: value matrixMultiply is not a member of object FourHops[0m
+[0m[[0m[31merror[0m] [0m[0m        val ans = FourHops.matrixMultiply(FourHops.matrixMultiply(graph, 4), 4).collect().toSet[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/scala/CorrectnessTests.scala:51:52: value matrixMultiply is not a member of object FourHops[0m
+[0m[[0m[31merror[0m] [0m[0m        val ans = FourHops.matrixMultiply(FourHops.matrixMultiply(graph, 4), 4).collect().toSet[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
