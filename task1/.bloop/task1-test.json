@@ -2,20 +2,20 @@
     "version": "1.4.0",
     "project": {
         "name": "task1-test",
-        "directory": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1",
-        "workspaceDir": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1",
+        "directory": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1",
+        "workspaceDir": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1",
         "sources": [
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/test/scala",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/test/scala-2.11",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/test/scala-2",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/test/java",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/target/scala-2.11/src_managed/test"
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/scala",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/scala-2.11",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/scala-2",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/java",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/target/scala-2.11/src_managed/test"
         ],
         "dependencies": [
             "task1"
         ],
         "classpath": [
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/.bloop/task1/scala-2.11/classes",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.bloop/task1/scala-2.11/classes",
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.12/scala-library-2.11.12.jar",
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.3.2/spark-sql_2.11-2.3.2.jar",
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest_2.11/3.0.8/scalatest_2.11-3.0.8.jar",
@@ -187,11 +187,11 @@
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar",
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"
         ],
-        "out": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/.bloop/task1",
-        "classesDir": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/.bloop/task1/scala-2.11/test-classes",
+        "out": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.bloop/task1",
+        "classesDir": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.bloop/task1/scala-2.11/test-classes",
         "resources": [
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/test/resources",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/target/scala-2.11/resource_managed/test"
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/test/resources",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/target/scala-2.11/resource_managed/test"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -271,7 +271,7 @@
             "config": {
                 "home": "/usr/lib/jvm/java-11-openjdk-amd64",
                 "options": [
-                    "-Duser.dir=/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1"
+                    "-Duser.dir=/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1"
                 ]
             },
             "mainClass": [

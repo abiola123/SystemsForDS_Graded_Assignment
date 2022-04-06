@@ -1,6 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/scala/FourHops.scala:97:56: missing argument list for method count in trait TraversableOnce[0m
-[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
-[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `count _` or `count(_)` instead of `count`.[0m
-[0m[[0m[31merror[0m] [0m[0m        val value = matrix_a.intersect(matrix_b).toSet.count[0m
-[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/scala/FourHops.scala:120:92: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : List[(Int, Int, Int)][0m
+[0m[[0m[31merror[0m] [0m[0m required: ((Int, Int), Iterable[(Int, Int)])[0m
+[0m[[0m[31merror[0m] [0m[0m        matrix.flatMap(x => mmMapper(N,x)).groupByKey().reduce((x,y) => List(mmReducer(x)) ++ List(mmReducer(y))).filter(_._3 != 0).map(x=> (x._1,x._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                           ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

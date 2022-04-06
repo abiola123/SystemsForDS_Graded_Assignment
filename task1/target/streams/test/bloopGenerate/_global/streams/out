@@ -1,4 +1,4 @@
 [debug] [task1-test] Classpath dependencies List()
 [debug] [task1-test] Dependencies from configurations List(task1)
-[debug] Bloop wrote the configuration of project 'task1-test' to '/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/.bloop/task1-test.json'
+[debug] Bloop wrote the configuration of project 'task1-test' to '/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.bloop/task1-test.json'
 [success] Generated .bloop/task1-test.json

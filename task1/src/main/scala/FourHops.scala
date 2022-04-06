@@ -115,9 +115,13 @@ object FourHops {
 
     Note that this is sufficient for our goal of identifying all 4-hop neighbors of a node. 
     */
-    // def matrixMultiply(matrix: GRAPH, N: Int): GRAPH = {
-    //      spark.sparkContext.emptyRDD[pairRDD]
-    // }
+    def matrixMultiply(matrix: GRAPH, N: Int): GRAPH = {
+
+        matrix.flatMap(x => mmMapper(N,x)).groupByKey().map(x => mmReducer(x)).filter(_._3 != 0).map(x=> (x._1,x._2))
+        
+        //.groupByKey(_._1).reduce(mmReducer).filter(_._3 !=0).map(x => (x._1,x._2))
+
+    }
 
 //------------------------------------------------------------------------------
 //  Auxiliary functions

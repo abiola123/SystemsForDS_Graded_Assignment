@@ -2,14 +2,14 @@
     "version": "1.4.0",
     "project": {
         "name": "task1",
-        "directory": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1",
-        "workspaceDir": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1",
+        "directory": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1",
+        "workspaceDir": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1",
         "sources": [
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/scala",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/scala-2.11",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/scala-2",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/java",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/target/scala-2.11/src_managed/main"
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/scala",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/scala-2.11",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/scala-2",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/java",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/target/scala-2.11/src_managed/main"
         ],
         "dependencies": [
             
@@ -177,11 +177,11 @@
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.5/scala-xml_2.11-1.0.5.jar",
             "/home/adeye/.cache/coursier/v1/https/repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"
         ],
-        "out": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/.bloop/task1",
-        "classesDir": "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/.bloop/task1/scala-2.11/classes",
+        "out": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.bloop/task1",
+        "classesDir": "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.bloop/task1/scala-2.11/classes",
         "resources": [
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/src/main/resources",
-            "/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1/target/scala-2.11/resource_managed/main"
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/src/main/resources",
+            "/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/target/scala-2.11/resource_managed/main"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -261,7 +261,7 @@
             "config": {
                 "home": "/usr/lib/jvm/java-11-openjdk-amd64",
                 "options": [
-                    "-Duser.dir=/home/adeye/Documents/EPFL/MA2/Systems/Programming_Assignment/task1"
+                    "-Duser.dir=/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1"
                 ]
             },
             "mainClass": [

@@ -16,13 +16,13 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }   
 
     //test 1
-    test("Counting Number of Vertices") {
+    ignore("Counting Number of Vertices") {
         val graph = spark.sparkContext.parallelize(List((1,2),(2,3),(3,1)))
         assert(FourHops.countVertices(graph) == 3)
     }
 
     //test 2
-    test("Correctness of mmMapper") {
+    ignore("Correctness of mmMapper") {
         val ans = FourHops.mmMapper(3, (1, 2))
         println(ans)
         val truth = List(((1,0),(1,2)), ((0,2),(0,1)), ((1,1),(1,2)), ((1,2),(0,1)), ((1,2),(1,2)), ((2,2),(0,1)))
@@ -30,7 +30,7 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }
     
     //test 3
-    test("Correctness of mmReducer: value > 0") {
+    ignore("Correctness of mmReducer: value > 0") {
         val indexes = (1,3) 
         val iterables = List((1,2), (0,2))
         val truth = (1, 3, 1)
@@ -38,7 +38,7 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }
 
     //test 4
-    test("Correctness of mmReducer: value = 0") {
+    ignore("Correctness of mmReducer: value = 0") {
         val indexes = (2,0) 
         val iterables = List((1,0), (0,2))
         val truth = (2, 0, 0)
@@ -46,11 +46,15 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }
 
     //test 5
-    // ignore("Correct 4-hop neighbors for a ring of size 4") {
-    //     val datafile = "src/test/resources/cycledirected.csv"
-    //     val graph = FourHops.loadData(spark, datafile)
-    //     val ans = FourHops.matrixMultiply(FourHops.matrixMultiply(graph, 4), 4).collect().toSet
-    //     val truth = Set((0,0),(1,1),(2,2),(3,3))
-    //     assert(truth.equals(ans))
-    // }
+    test("Correct 4-hop neighbors for a ring of size 4") {
+        val datafile = "src/test/resources/cycledirected.csv"
+        val graph = FourHops.loadData(spark, datafile)
+
+        val tmp = FourHops.matrixMultiply(graph, 4).collect()
+        println(tmp)
+        val ans = FourHops.matrixMultiply(FourHops.matrixMultiply(graph, 4), 4).collect().toSet
+        println(ans)
+        val truth = Set((0,0),(1,1),(2,2),(3,3))
+        assert(truth.equals(ans))
+    }
 }
