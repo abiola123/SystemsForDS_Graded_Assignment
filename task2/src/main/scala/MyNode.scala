@@ -1,4 +1,4 @@
-// YOUR_FULL_NAME_HERE
+$// YOUR_FULL_NAME_HERE
 package task2
 
 import scala.collection.mutable.Queue
@@ -41,12 +41,41 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
                 case Some(i) => response = new Message(id, RETRIEVE_SUCCESS, i)
                 case None => response = new Message(id, RETRIEVE_FAILURE)
             }
-            /*
-             * TODO: task 2.1
-             * Add retrieval algorithm to retrieve from the peers here
-             * when the key isn't available on the HOST node.
-             * Use router.sendMessage(from, to, message) to send a message to another node
-             */
+
+            //Kind of a bfs here. We check in the list of our neighbours and ask each one of them to retrieve the stored element. If none of them has the stored element than they will contact their neigbours and etc.
+            
+            var found = false
+            var i = 0
+            //Check if neighbours of current node have the data
+            while(!found && i < neighbours.size) {
+                val neighbor = neighbours(i)
+                val responseFromNeighbour = router.sendMessage(id,neighbor, new Message(id,RETRIEVE,""))
+                found = value match {
+                    case Some(i) =>  response = new Message(id, RETRIEVE_SUCCESS, i)
+                    case None => response = new Message(id, RETRIEVE_FAILURE)
+                }
+
+                i+=1
+            }
+
+            //If any  neighbor had the data stop, otherwise start looking at neighbours of neighbours
+            var found = false
+            var i = 0
+            //Check if neighbours of current node have the data
+            while(!found && i < neighbours.size) {
+                val neighbor = neighbours(i)
+                val responseFromNeighbour = router.sendMessage(id,neighbor, new Message(id,RETRIEVE,""))
+                found = value match {
+                    case Some(i) =>  response = new Message(id, RETRIEVE_SUCCESS, i)
+                    case None => response = new Message(id, RETRIEVE_FAILURE)
+                }
+
+                i+=1
+            }
+
+
+
+
             ???
 
             response // Return the correct response message
