@@ -1,4 +1,4 @@
-$// YOUR_FULL_NAME_HERE
+// ABIOLA ADEYE - 282145
 package task2
 
 import scala.collection.mutable.Queue
@@ -38,47 +38,27 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             val value = getKey(key) // Check if the key is present on the node
             var response : Message = new Message("", "", "")
             value match {
-                case Some(i) => response = new Message(id, RETRIEVE_SUCCESS, i)
-                case None => response = new Message(id, RETRIEVE_FAILURE)
+               case Some(i) => return new Message(id, RETRIEVE_SUCCESS, i)
+                case _ => _
             }
 
-            //Kind of a bfs here. We check in the list of our neighbours and ask each one of them to retrieve the stored element. If none of them has the stored element than they will contact their neigbours and etc.
-            
+            //TODO: replace dfs by bfs here as it is most likely more efficient
+
+            //Kind of a bfs here. We check in the list of our neighbours and ask each one of them to retrieve the stored element. If none of them has the stored element then they will contact their neigbours and etc.
+           
             var found = false
-            var i = 0
-            //Check if neighbours of current node have the data
+            var i = 0 
             while(!found && i < neighbours.size) {
                 val neighbor = neighbours(i)
-                val responseFromNeighbour = router.sendMessage(id,neighbor, new Message(id,RETRIEVE,""))
-                found = value match {
-                    case Some(i) =>  response = new Message(id, RETRIEVE_SUCCESS, i)
-                    case None => response = new Message(id, RETRIEVE_FAILURE)
-                }
+                val responseFromNB = router.sendMessage(id,neighbor,new Message(id,RETRIEVE,key))
 
-                i+=1
+                responseFromNB match {
+                    case Some(i) => return new Message(id, RETRIEVE_SUCCESS, i)
+                    case _ => _
+                }
             }
 
-            //If any  neighbor had the data stop, otherwise start looking at neighbours of neighbours
-            var found = false
-            var i = 0
-            //Check if neighbours of current node have the data
-            while(!found && i < neighbours.size) {
-                val neighbor = neighbours(i)
-                val responseFromNeighbour = router.sendMessage(id,neighbor, new Message(id,RETRIEVE,""))
-                found = value match {
-                    case Some(i) =>  response = new Message(id, RETRIEVE_SUCCESS, i)
-                    case None => response = new Message(id, RETRIEVE_FAILURE)
-                }
-
-                i+=1
-            }
-
-
-
-
-            ???
-
-            response // Return the correct response message
+            new Message(id, RETRIEVE_FAILURE)
         }
         else if (message.messageType == STORE) { // Request to store key->value
             /*
@@ -89,6 +69,7 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
              * TODO: task 2.3
              * Change the storage algorithm below to handle nodes crashing.
              */
+
             val data = message.data.split("->") // data(0) is key, data(1) is value
             val storedOnSelf = setKey(data(0), data(1)) // Store on current node
             if (storedOnSelf) {
@@ -97,6 +78,29 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             else {
                 new Message(id, STORE_FAILURE)
             }
+
+            // try to store node on neighbours
+            var stored = false
+            var i = 0 
+            while(!stored && i < neighbours.size) {
+                val neighbor = neighbours(i)
+                val neighborReply = router.sendMessage(id,neighbor,new Message(id,STORE,message.data))
+
+                neighborReply match {
+                    case Message(id,STORE_SUCCESS) => return Message(neighbor,STORE_SUCCESS)
+                    case Message(id,_) => _    
+                }
+                 
+            }
+
+            //if we arrive here, none of our neighbors was able to store the node, we try with the neighbors of the neighbors now
+
+            return new Message(id, STORE_FAILURE)
+             
+
+
+
+          
         }
         /*
          * Feel free to add more kinds of messages.
