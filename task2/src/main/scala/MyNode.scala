@@ -17,6 +17,15 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
     val USER = "USER"
     val nodes_may_fail = 4
 
+    val queue = Queue[String](neighbours: _*)
+    val visited = Set[String](neighbours: _*)
+
+      // //put initial neighbours in the queue and in the set
+                // neighbours.foreach(x=> {
+                //     visited += x
+                //     queue += x
+                // })
+
     override def onReceive(from: String, message: Message): Message = {
         /* 
          * Called when the node receives a message from some where
@@ -39,15 +48,41 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             var response : Message = new Message("", "", "")
             value match {
                 case Some(i) => response = new Message(id, RETRIEVE_SUCCESS, i)
-                case None => response = new Message(id, RETRIEVE_FAILURE)
+                //return a retrieve failure with a list of all our neighbors to the source
+                case None => response = new Message(id, RETRIEVE_FAILURE,neighbours.mkString(" "))
             }
-            /*
-             * TODO: task 2.1
-             * Add retrieval algorithm to retrieve from the peers here
-             * when the key isn't available on the HOST node.
-             * Use router.sendMessage(from, to, message) to send a message to another node
-             */
-            ???
+           
+           
+            if(value == None) {
+
+                //ajouter if from ici 
+
+                while(!queue.isEmpty) {
+                    val nextElem = queue.dequeue
+                    val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,RETRIEVE,key))
+
+                    val responseType = responseFromNxt.messageType
+                    if(responseType == RETRIEVE_SUCCESS) {
+                        response = new Message(responseFromNxt.source , RETRIEVE_SUCCESS , responseFromNxt.data )
+                        queue.dequeueAll(_ => true)
+                    } else {
+                        //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
+                        val newNeighbours = responseFromNxt.data.split(" ")
+
+                        newNeighbours.foreach(x => {
+                            if(!visited.contains(x)) {
+                                visited += x
+                                queue += x
+                            }
+                        })
+
+                    }
+                }
+
+            }
+                
+                
+            
 
             response // Return the correct response message
         }
