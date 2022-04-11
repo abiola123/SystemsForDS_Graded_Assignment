@@ -17,9 +17,6 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
     val USER = "USER"
     val nodes_may_fail = 4
 
-    val queue = Queue[String](neighbours: _*)
-    val visited = Set[String](neighbours: _*)
-
       // //put initial neighbours in the queue and in the set
                 // neighbours.foreach(x=> {
                 //     visited += x
@@ -43,6 +40,9 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             new Message(id, NEIGHBOURS_RESPONSE, neighbours.mkString(" "))
         }
         else if (message.messageType == RETRIEVE) { // Request to get the value
+            val queue = Queue[String](neighbours: _*)
+            val visited = Set[String](neighbours: _*)
+
             val key = message.data // This is the key
             val value = getKey(key) // Check if the key is present on the node
             var response : Message = new Message("", "", "")
@@ -50,59 +50,83 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
                 case Some(i) => response = new Message(id, RETRIEVE_SUCCESS, i)
                 //return a retrieve failure with a list of all our neighbors to the source
                 case None => response = new Message(id, RETRIEVE_FAILURE,neighbours.mkString(" "))
-            }
-           
-           
+            }           
             if(value == None) {
 
-                //ajouter if from ici 
+                if(this.id == USER) {
+                    while(!queue.isEmpty) {
+                        val nextElem = queue.dequeue()
+                        val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,RETRIEVE,key))
 
+                        val responseType = responseFromNxt.messageType
+                        if(responseType == RETRIEVE_SUCCESS) {
+                            response = new Message(responseFromNxt.source , RETRIEVE_SUCCESS , responseFromNxt.data )
+                            queue.dequeueAll(_ => true)
+                        } else {
+                            //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
+                            val newNeighbours = responseFromNxt.data.split(" ")
+
+                            newNeighbours.foreach(x => {
+                                if(!visited.contains(x)) {
+                                    visited += x
+                                    queue += x
+                                }
+                            })
+
+                        }
+                    }
+                } else {
+                    response = new Message(id, RETRIEVE_FAILURE,neighbours.mkString(" ")) 
+                }
+
+
+            }
+                
+                
+            response // Return the correct response message
+        }
+        else if (message.messageType == STORE) { // Request to store key->value
+
+            val queue = Queue[String](neighbours: _*)
+            val visited = Set[String](neighbours: _*)
+
+            var response : Message = new Message("", "", "")
+
+            val data = message.data.split("->") // data(0) is key, data(1) is value
+            val storedOnSelf = setKey(data(0), data(1)) // Store on current node
+            if (storedOnSelf) {
+                response = new Message(id, STORE_SUCCESS)
+            }
+            else {
+                response = new Message(id, STORE_FAILURE)
+            }
+
+            if(!storedOnSelf) {
                 while(!queue.isEmpty) {
-                    val nextElem = queue.dequeue
-                    val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,RETRIEVE,key))
-
+                    val nextElem = queue.dequeue()
+                    val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,STORE,message.data))
                     val responseType = responseFromNxt.messageType
-                    if(responseType == RETRIEVE_SUCCESS) {
-                        response = new Message(responseFromNxt.source , RETRIEVE_SUCCESS , responseFromNxt.data )
-                        queue.dequeueAll(_ => true)
-                    } else {
-                        //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
-                        val newNeighbours = responseFromNxt.data.split(" ")
 
+                    if(responseType == STORE_SUCCESS) {
+                            response = new Message(responseFromNxt.source , RETRIEVE_SUCCESS , responseFromNxt.data )
+                            queue.dequeueAll(_ => true)
+                        
+                    } else {
+                        //if we got a failure, we have to extract all the elements from the neighbours sent in theresponse and add them to our queue and array (if they have not been discovered yet)
+                        val newNeighbours = responseFromNxt.data.split(" ")
                         newNeighbours.foreach(x => {
                             if(!visited.contains(x)) {
                                 visited += x
                                 queue += x
                             }
                         })
-
-                    }
+                    }  
                 }
+            } else {
 
             }
-                
-                
-            
 
-            response // Return the correct response message
-        }
-        else if (message.messageType == STORE) { // Request to store key->value
-            /*
-             * TODO: task 2.2
-             * Change the storage algorithm below to store on the peers
-             * when there isn't enough space on the HOST node.
-             *
-             * TODO: task 2.3
-             * Change the storage algorithm below to handle nodes crashing.
-             */
-            val data = message.data.split("->") // data(0) is key, data(1) is value
-            val storedOnSelf = setKey(data(0), data(1)) // Store on current node
-            if (storedOnSelf) {
-                new Message(id, STORE_SUCCESS)
-            }
-            else {
-                new Message(id, STORE_FAILURE)
-            }
+            response
         }
         /*
          * Feel free to add more kinds of messages.
