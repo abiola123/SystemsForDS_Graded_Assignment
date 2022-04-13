@@ -7327,3 +7327,15 @@ scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
 	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:417)
 	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:58)
 
+2022.04.13 22:15:44 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.metals/lsp.trace.json or /home/adeye/.cache/metals/lsp.trace.json[0m
+2022.04.13 22:15:44 INFO  logging to file /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.metals/metals.log[0m
+2022.04.13 22:15:44 INFO  Started: Metals version 0.11.2 in workspace '/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1' for client Visual Studio Code 1.66.2.[0m
+2022.04.13 22:15:44 INFO  Parse release: 11.0.14.1[0m
+2022.04.13 22:15:47 INFO  time: initialize in 3.08s[0m
+2022.04.13 22:15:51 INFO  Attempting to connect to the build server...[0m
+2022.04.13 22:15:51 INFO  skipping build import with status 'Installed'[0m
+2022.04.13 22:15:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
+2022.04.13 22:15:51 INFO  Attempting to connect to the build server...[0m
+2022.04.13 22:15:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/project/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
+2022.04.13 22:15:51 INFO  time: Connected to build server in 0.27s[0m
+2022.04.13 22:15:51 INFO  Connected to Build server: Bloop v1.4.13[0m
