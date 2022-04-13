@@ -40,11 +40,10 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             new Message(id, NEIGHBOURS_RESPONSE, neighbours.mkString(" "))
         }
         else if (message.messageType == RETRIEVE) { // Request to get the value
-            val queue = Queue[String](neighbours: _*)
-            val visited = Set[String](neighbours: _*)
-
+            println("before")
             val key = message.data // This is the key
             val value = getKey(key) // Check if the key is present on the node
+            println("after")
             var response : Message = new Message("", "", "")
 
             value match {
@@ -55,6 +54,10 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             if(value == None) {
 
                 if(from == USER) {
+                    val queue = Queue[String](neighbours: _*)
+                    val visited = Set[String](neighbours: _*)
+
+                    visited.add(this.id)
 
                     while(!queue.isEmpty && response.messageType == RETRIEVE_FAILURE) {
                         val nextElem = queue.dequeue()
@@ -63,7 +66,7 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
                         val responseType = responseFromNxt.messageType
                         if(responseType == RETRIEVE_SUCCESS) {
                             response = new Message(responseFromNxt.source , RETRIEVE_SUCCESS , responseFromNxt.data )
-                            queue.dequeueAll(_ => true)
+                            //queue.dequeueAll(_ => true)
                         } else {
                             //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
                             val newNeighbours = responseFromNxt.data.split(" ")

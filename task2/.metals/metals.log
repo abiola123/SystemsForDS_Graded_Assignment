@@ -274,3 +274,17 @@ INFO: Unsupported notification method: $/setTrace
 2022.04.13 14:45:11 INFO  time: compiled task2 in 0.58s[0m
 2022.04.13 14:45:27 INFO  compiling task2 (1 scala source)[0m
 2022.04.13 14:45:27 INFO  time: compiled task2 in 0.58s[0m
+2022.04.13 14:46:37 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:46:37 INFO  time: compiled task2 in 0.57s[0m
+2022.04.13 14:46:46 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:46:46 INFO  time: compiled task2 in 0.62s[0m
+2022.04.13 14:53:47 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:53:47 INFO  time: compiled task2 in 0.66s[0m
+2022.04.13 14:54:40 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:54:40 INFO  time: compiled task2 in 0.64s[0m
+2022.04.13 14:54:46 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:54:46 INFO  time: compiled task2 in 0.62s[0m
+2022.04.13 14:57:39 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:57:39 INFO  time: compiled task2 in 0.61s[0m
+2022.04.13 14:58:22 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 14:58:22 INFO  time: compiled task2 in 0.59s[0m
