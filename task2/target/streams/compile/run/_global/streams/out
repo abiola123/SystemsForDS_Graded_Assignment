@@ -1,10 +1,12 @@
-[0m[[0m[31merror[0m] [0m[0mjava.util.NoSuchElementException: key not found: u13[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.NoSuchElementException: key not found: [0m
 [0m[[0m[31merror[0m] [0m[0m	at scala.collection.MapLike$class.default(MapLike.scala:228)[0m
 [0m[[0m[31merror[0m] [0m[0m	at scala.collection.AbstractMap.default(Map.scala:59)[0m
 [0m[[0m[31merror[0m] [0m[0m	at scala.collection.MapLike$class.apply(MapLike.scala:141)[0m
 [0m[[0m[31merror[0m] [0m[0m	at scala.collection.AbstractMap.apply(Map.scala:59)[0m
 [0m[[0m[31merror[0m] [0m[0m	at task2.Router.sendMessage(Router.scala:20)[0m
-[0m[[0m[31merror[0m] [0m[0m	at task2.Task2$.main(Task2.scala:58)[0m
+[0m[[0m[31merror[0m] [0m[0m	at task2.MyNode.onReceive(MyNode.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at task2.Router.sendMessage(Router.scala:20)[0m
+[0m[[0m[31merror[0m] [0m[0m	at task2.Task2$.main(Task2.scala:45)[0m
 [0m[[0m[31merror[0m] [0m[0m	at task2.Task2.main(Task2.scala)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
@@ -23,4 +25,4 @@
 [0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.base/java.lang.Thread.run(Thread.java:829)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.util.NoSuchElementException: key not found: u13[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.util.NoSuchElementException: key not found: [0m

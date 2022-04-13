@@ -94,58 +94,45 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
 
             var response : Message = new Message("", STORE_FAILURE, "")
 
-            
-
             val data = message.data.split("->") // data(0) is key, data(1) is value
             val storedOnSelf = setKey(data(0), data(1)) // Store on current node
 
-            if (storedOnSelf) {
-                response = new Message(id, STORE_SUCCESS)
-            }
-            else {
-                response = new Message(id, STORE_FAILURE)
-            }
+            if(from == USER) {
 
-            if(!storedOnSelf) {
-
-                if(from == USER) {
-
-                
-                    var queue = Queue[String](neighbours: _*)
-                    var visited = Set[String](neighbours: _*)
-
-                    visited.add(this.id)
-
-                    while(!queue.isEmpty && response.messageType == STORE_FAILURE) {
-                   
-                        val nextElem = queue.dequeue()
-
-                        val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,STORE,message.data))
-                        val responseType = responseFromNxt.messageType
-
-                
-                        if(responseType == STORE_SUCCESS) {
-                                response = new Message(responseFromNxt.source , STORE_SUCCESS , responseFromNxt.data )
-                                //queue.dequeueAll(_ => true)
-                            
-                        } else {
-                            //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
-                            val newNeighbours = responseFromNxt.data.split(" ")
-                            newNeighbours.foreach(x => {
-                                if(!visited.contains(x)) {
-                                    visited += x
-                                    queue += x
-                                }
-                            })
-                        }  
+                //prepare datastructures that keep track of the nodes that we have already contacted 
+                var queue = Queue[String](neighbours: _*)
+                var visited = Set[String](neighbours: _*)
+                var storedOn = Set[String]()
+                visited.add(this.id)
+                //if we were able to store the key on the host, then we need to do one copy less
+                if(storedOnSelf) {
+                    storedOn.add(this.id)
+                }
+                while(!queue.isEmpty && storedOn.size < 6) {
+                    val nextElem = queue.dequeue()
+                    val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,STORE,message.data))
+                    val responseType = responseFromNxt.messageType
+                    if(responseType == STORE_SUCCESS) {
+                        storedOn.add(nextElem) 
+                        if(storedOn.size == 6) {
+                            response = new Message(responseFromNxt.source , STORE_SUCCESS , responseFromNxt.data )
+                        }
                         
-                    }
-                } else {
-                    response = new Message(id, RETRIEVE_FAILURE,neighbours.mkString(" "))
-                }    
+                    }  
+                        //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
+                    val newNeighbours = responseFromNxt.data.split(" ")
+                    newNeighbours.foreach(x => {
+                        if(!visited.contains(x)) {
+                            visited += x
+                            queue += x
+                        }
+                    })
+                }      
+                    
+                        
             } else {
-
-            }
+                response = if (storedOnSelf) new Message(id, STORE_SUCCESS,neighbours.mkString(" ")) else new Message(id, STORE_FAILURE,neighbours.mkString(" "))
+            } 
 
             response
         }

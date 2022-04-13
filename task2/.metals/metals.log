@@ -288,3 +288,88 @@ INFO: Unsupported notification method: $/setTrace
 2022.04.13 14:57:39 INFO  time: compiled task2 in 0.61s[0m
 2022.04.13 14:58:22 INFO  compiling task2 (1 scala source)[0m
 2022.04.13 14:58:22 INFO  time: compiled task2 in 0.59s[0m
+2022.04.13 15:01:04 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 15:01:04 WARN  Could not load snapshot text for /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/src/main/scala/Task2.scala[0m
+2022.04.13 15:01:04 WARN  Could not load snapshot text for /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/src/main/scala/Task2.scala[0m
+2022.04.13 15:01:04 INFO  time: compiled task2 in 0.58s[0m
+2022.04.13 15:01:26 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 15:01:26 INFO  time: compiled task2 in 0.61s[0m
+2022.04.13 15:02:26 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 15:02:26 INFO  time: compiled task2 in 0.54s[0m
+2022.04.13 15:02:29 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 15:02:29 INFO  time: compiled task2 in 0.66s[0m
+2022.04.13 15:02:57 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 15:02:57 INFO  time: compiled task2 in 0.58s[0m
+2022.04.13 15:02:59 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 15:02:59 INFO  time: compiled task2 in 0.58s[0m
+2022.04.13 21:30:33 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/.metals/lsp.trace.json or /home/adeye/.cache/metals/lsp.trace.json[0m
+2022.04.13 21:30:35 INFO  logging to file /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/.metals/metals.log[0m
+2022.04.13 21:30:35 INFO  Started: Metals version 0.11.2 in workspace '/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2' for client Visual Studio Code 1.66.2.[0m
+2022.04.13 21:30:35 INFO  Parse release: 11.0.14.1[0m
+2022.04.13 21:30:41 INFO  time: initialize in 6.4s[0m
+2022.04.13 21:30:45 INFO  Attempting to connect to the build server...[0m
+2022.04.13 21:30:45 INFO  skipping build import with status 'Requested'[0m
+2022.04.13 21:30:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
+2022.04.13 21:30:52 INFO  Attempting to connect to the build server...[0m
+2022.04.13 21:30:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/project/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
+2022.04.13 21:30:52 INFO  time: Connected to build server in 7.66s[0m
+2022.04.13 21:30:52 INFO  Connected to Build server: Bloop v1.4.13[0m
+2022.04.13 21:30:55 INFO  no build target found for /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/src/main/scala/MyNode.scala. Using presentation compiler with project's scala-library version: 3.1.1[0m
+2022.04.13 21:30:55 INFO  time: code lens generation in 5s[0m
+2022.04.13 21:30:56 INFO  time: Imported build in 0.25s[0m
+2022.04.13 21:30:57 INFO  no build target found for /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/src/main/scala/MyNode.scala. Using presentation compiler with project's scala-library version: 3.1.1[0m
+2022.04.13 21:31:00 INFO  time: code lens generation in 9.73s[0m
+2022.04.13 21:31:03 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/lib/src.zip. Java symbols will not be available.[0m
+2022.04.13 21:31:03 INFO  time: indexed workspace in 7.28s[0m
+2022.04.13 21:38:27 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:38:34 INFO  time: compiled task2 in 7.72s[0m
+2022.04.13 21:38:49 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:38:52 INFO  time: compiled task2 in 3.13s[0m
+2022.04.13 21:39:11 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:39:13 INFO  time: compiled task2 in 1.98s[0m
+2022.04.13 21:39:49 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:39:49 INFO  time: compiled task2 in 0.32s[0m
+2022.04.13 21:39:56 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:39:58 INFO  time: compiled task2 in 1.94s[0m
+2022.04.13 21:42:14 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:42:14 INFO  time: compiled task2 in 0.19s[0m
+2022.04.13 21:42:24 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:42:24 INFO  time: compiled task2 in 0.13s[0m
+2022.04.13 21:42:26 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:42:26 INFO  time: compiled task2 in 0.2s[0m
+2022.04.13 21:43:29 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:43:31 INFO  time: compiled task2 in 2.02s[0m
+2022.04.13 21:43:42 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:43:44 INFO  time: compiled task2 in 1.88s[0m
+2022.04.13 21:44:29 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:44:31 INFO  time: compiled task2 in 1.71s[0m
+2022.04.13 21:45:21 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:45:21 INFO  time: compiled task2 in 0.32s[0m
+2022.04.13 21:45:28 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:45:28 INFO  time: compiled task2 in 0.14s[0m
+2022.04.13 21:45:42 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:45:44 INFO  time: compiled task2 in 2.02s[0m
+2022.04.13 21:47:37 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:47:39 INFO  time: compiled task2 in 1.82s[0m
+2022.04.13 21:48:09 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:48:11 INFO  time: compiled task2 in 1.42s[0m
+2022.04.13 21:49:18 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:49:20 INFO  time: compiled task2 in 1.84s[0m
+Apr 13, 2022 9:51:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1383
+2022.04.13 21:52:04 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:52:06 INFO  time: compiled task2 in 1.62s[0m
+2022.04.13 21:53:21 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:53:22 INFO  time: compiled task2 in 1.52s[0m
+2022.04.13 21:53:42 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:53:43 INFO  time: compiled task2 in 1.37s[0m
+2022.04.13 21:53:51 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:53:52 INFO  time: compiled task2 in 1.37s[0m
+Apr 13, 2022 9:55:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1586
+2022.04.13 21:55:54 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:55:56 INFO  time: compiled task2 in 1.57s[0m
+2022.04.13 21:56:12 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:56:14 INFO  time: compiled task2 in 2.1s[0m
+2022.04.13 21:56:18 INFO  compiling task2 (1 scala source)[0m
+2022.04.13 21:56:19 INFO  time: compiled task2 in 1.44s[0m

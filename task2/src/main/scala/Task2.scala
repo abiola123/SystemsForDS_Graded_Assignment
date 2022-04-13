@@ -45,7 +45,7 @@ object Task2 {
     var m = router.sendMessage(USER, "u2", new Message(USER, STORE, "key1->value1")) // Store key
     // println(m.messageType + " " + m.data)  
 
-    (1 to 40).foreach(x => {
+    (1 to 10).foreach(x => {
        m = router.sendMessage(USER, "u2", new Message(USER, STORE, "key" + x + "->value" + x))
     })
 
@@ -55,8 +55,8 @@ object Task2 {
 
 
 
-    m = router.sendMessage(USER, "u2", new Message(USER, RETRIEVE, "key30")) // Retrieve key
-    println(m.messageType + " " + m.data)
+    // m = router.sendMessage(USER, "u5", new Message(USER, RETRIEVE, "key30")) // Retrieve key
+    // println(m.messageType + " " + m.data)
 
     // m = router.sendMessage(USER, "u13", new Message(USER, RETRIEVE, "key1")) // Retrieve from another node
     // println(m.messageType + " " + m.data)
