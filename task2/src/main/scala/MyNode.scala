@@ -46,6 +46,7 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             val key = message.data // This is the key
             val value = getKey(key) // Check if the key is present on the node
             var response : Message = new Message("", "", "")
+
             value match {
                 case Some(i) => response = new Message(id, RETRIEVE_SUCCESS, i)
                 //return a retrieve failure with a list of all our neighbors to the source
@@ -53,8 +54,9 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             }           
             if(value == None) {
 
-                if(this.id == USER) {
-                    while(!queue.isEmpty) {
+                if(from == USER) {
+
+                    while(!queue.isEmpty && response.messageType == RETRIEVE_FAILURE) {
                         val nextElem = queue.dequeue()
                         val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,RETRIEVE,key))
 
@@ -87,13 +89,13 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
         }
         else if (message.messageType == STORE) { // Request to store key->value
 
-            val queue = Queue[String](neighbours: _*)
-            val visited = Set[String](neighbours: _*)
+            var response : Message = new Message("", STORE_FAILURE, "")
 
-            var response : Message = new Message("", "", "")
+            
 
             val data = message.data.split("->") // data(0) is key, data(1) is value
             val storedOnSelf = setKey(data(0), data(1)) // Store on current node
+
             if (storedOnSelf) {
                 response = new Message(id, STORE_SUCCESS)
             }
@@ -102,26 +104,42 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             }
 
             if(!storedOnSelf) {
-                while(!queue.isEmpty) {
-                    val nextElem = queue.dequeue()
-                    val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,STORE,message.data))
-                    val responseType = responseFromNxt.messageType
 
-                    if(responseType == STORE_SUCCESS) {
-                            response = new Message(responseFromNxt.source , RETRIEVE_SUCCESS , responseFromNxt.data )
-                            queue.dequeueAll(_ => true)
+                if(from == USER) {
+
+                
+                    var queue = Queue[String](neighbours: _*)
+                    var visited = Set[String](neighbours: _*)
+
+                    visited.add(this.id)
+
+                    while(!queue.isEmpty && response.messageType == STORE_FAILURE) {
+                   
+                        val nextElem = queue.dequeue()
+
+                        val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,STORE,message.data))
+                        val responseType = responseFromNxt.messageType
+
+                
+                        if(responseType == STORE_SUCCESS) {
+                                response = new Message(responseFromNxt.source , STORE_SUCCESS , responseFromNxt.data )
+                                //queue.dequeueAll(_ => true)
+                            
+                        } else {
+                            //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
+                            val newNeighbours = responseFromNxt.data.split(" ")
+                            newNeighbours.foreach(x => {
+                                if(!visited.contains(x)) {
+                                    visited += x
+                                    queue += x
+                                }
+                            })
+                        }  
                         
-                    } else {
-                        //if we got a failure, we have to extract all the elements from the neighbours sent in theresponse and add them to our queue and array (if they have not been discovered yet)
-                        val newNeighbours = responseFromNxt.data.split(" ")
-                        newNeighbours.foreach(x => {
-                            if(!visited.contains(x)) {
-                                visited += x
-                                queue += x
-                            }
-                        })
-                    }  
-                }
+                    }
+                } else {
+                    response = new Message(id, RETRIEVE_FAILURE,neighbours.mkString(" "))
+                }    
             } else {
 
             }

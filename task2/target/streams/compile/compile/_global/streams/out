@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task2/src/main/scala/MyNode.scala:123:50: task2.Message and String are unrelated: they will most likely never compare equal[0m
+[0m[[0m[33mwarn[0m] [0m[0m                while(!queue.isEmpty && response == STORE_FAILURE) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
