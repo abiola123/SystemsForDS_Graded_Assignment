@@ -373,3 +373,6 @@ WARNING: Unmatched cancel notification for request id 1586
 2022.04.13 21:56:14 INFO  time: compiled task2 in 2.1s[0m
 2022.04.13 21:56:18 INFO  compiling task2 (1 scala source)[0m
 2022.04.13 21:56:19 INFO  time: compiled task2 in 1.44s[0m
+2022.04.13 22:01:03 INFO  shutting down Metals[0m
+2022.04.13 22:01:03 INFO  Shut down connection with build server.[0m
+2022.04.13 22:01:03 INFO  Shut down connection with build server.[0m

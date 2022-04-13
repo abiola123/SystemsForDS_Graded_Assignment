@@ -1,2 +1,11 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/target/scala-2.11/test-classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CorrectnessTests$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CorrectnessTests.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CorrectnessTests$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CorrectnessTests$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CorrectnessTests$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CorrectnessTests$$anonfun$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/target/scala-2.11/test-classes.bak[0m

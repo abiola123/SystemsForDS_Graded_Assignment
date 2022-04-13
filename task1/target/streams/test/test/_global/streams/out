@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CorrectnessTests, org.scalatest.tools.Framework$$anon$1@7103e78c, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CorrectnessTests, org.scalatest.tools.Framework$$anon$1@774c3330, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mCorrectnessTests:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[33m- Counting Number of Vertices !!! IGNORED !!![0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[33m- Correctness of mmMapper !!! IGNORED !!![0m[0m
@@ -17,7 +17,7 @@
 [0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap$$anon$1$$anonfun$foreach$2.apply(HashMap.scala:134)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 844 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 6 seconds, 474 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 4, pending 0[0m[0m
