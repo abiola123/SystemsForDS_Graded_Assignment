@@ -94,8 +94,8 @@ object FourHops {
 
         val grouped = elements.groupBy(_._1)
 
-        val matrix_a = grouped(1).map(_._2).toSet
-        val matrix_b = grouped(0).map(_._2).toSet
+        val matrix_a = grouped.getOrElse(1,List[(Int,Int)]()).map(_._2).toSet
+        val matrix_b = grouped.getOrElse(0,List[(Int,Int)]()).map(_._2).toSet
 
         val value = matrix_a.intersect(matrix_b).size
         (index._1,index._2,value)
@@ -117,10 +117,14 @@ object FourHops {
     */
     def matrixMultiply(matrix: GRAPH, N: Int): GRAPH = {
 
-        matrix.flatMap(x => mmMapper(N,x)).groupByKey().map(x => mmReducer(x)).filter(_._3 != 0).map(x=> (x._1,x._2))
-        
-        //.groupByKey(_._1).reduce(mmReducer).filter(_._3 !=0).map(x => (x._1,x._2))
+        val one = matrix.flatMap(x => mmMapper(N,x)).groupByKey()
 
+        val two = one.map(x => mmReducer(x)).filter(_._3 != 0).map(x=> (x._1,x._2))
+        
+
+        two
+
+        
     }
 
 //------------------------------------------------------------------------------
