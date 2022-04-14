@@ -1,4 +1,4 @@
-// YOUR_FULL_NAME_HERE
+// Ioan Florin Catalin Nitu
 package task2
 
 import scala.io.Source
@@ -29,7 +29,7 @@ object Task2 {
     val router: Router = new Router() // Instantiate the router
 
     // Read the overlay adjacency list
-    val source = Source.fromFile("overlay.txt")
+    val source = Source.fromFile("overlay_big.txt")
     val routerInfo: scala.collection.mutable.Map[String, MyNode] = scala.collection.mutable.Map()
     for (line <- source.getLines()) {
       val adj = line.split(" ")
@@ -42,55 +42,86 @@ object Task2 {
 
     /* QUERIES */
 
-    var m = router.sendMessage(USER, "u2", new Message(USER, STORE, "key1->value1")) // Store key
-    // println(m.messageType + " " + m.data)  
+    var m = router.sendMessage(USER, "u0", new Message(USER, RETRIEVE, "key")) // RETRIEVE_FAILURE
+    println(m.messageType + " " + m.data)
+    assert(m.messageType == RETRIEVE_FAILURE)
 
-    (1 to 10).foreach(x => {
-       m = router.sendMessage(USER, "u2", new Message(USER, STORE, "key" + x + "->value" + x))
-    })
-
-    //m = router.sendMessage(USER, "u2", new Message(USER, STORE, "key2->value2")) // Store key
-
-    // m = router.sendMessage(USER, "u2", new Message(USER, STORE, "key3->value3")) // Store key
-
-
-
-    // m = router.sendMessage(USER, "u5", new Message(USER, RETRIEVE, "key30")) // Retrieve key
-    // println(m.messageType + " " + m.data)
-
-    // m = router.sendMessage(USER, "u13", new Message(USER, RETRIEVE, "key1")) // Retrieve from another node
-    // println(m.messageType + " " + m.data)
+    for (i <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, STORE, s"key${i}->value${i}")) // STORE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == STORE_SUCCESS)
+    }
+    for (i <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${i}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
+    for (i <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${999 - i}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
+    for (i <- (0 until 100)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${1000}")) // RETRIEVE_FAILURE
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_FAILURE)
+    }
+    for (i <- (0 until 10); j <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${j}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
+    for (i <- (0 until 1000); j <- (0 until 10)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${j}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
 
     /* Check the correctness of the store. The stored keys should be present in at least one node */
-    println(routerInfo("u1").returnStore)
-    println(routerInfo("u2").returnStore)
-    println(routerInfo("u3").returnStore)
-    println(routerInfo("u4").returnStore)
-    println(routerInfo("u5").returnStore)
-    println(routerInfo("u6").returnStore)
-    println(routerInfo("u7").returnStore)
-    println(routerInfo("u8").returnStore)
+    for (i <- (0 until 1000)) {
+      println(routerInfo(s"u${i}").returnStore)
+    }
 
 
     /* Crash some nodes*/
-    var failing_node = routerInfo("u1")
-    var all_keys = failing_node.returnStore.keySet
-    all_keys.foreach {
-      failing_node.removeKey
+    for (i <- (996 until 1000)) {
+      var failing_node = routerInfo(s"u${i}")
+      var all_keys = failing_node.returnStore.keySet
+      all_keys.foreach {
+        failing_node.removeKey
+      }
     }
-
     println("Post Crash")
 
-    println(routerInfo("u1").returnStore)
-    println(routerInfo("u2").returnStore)
-    println(routerInfo("u3").returnStore)
-    println(routerInfo("u4").returnStore)
-    println(routerInfo("u5").returnStore)
-    println(routerInfo("u6").returnStore)
-    println(routerInfo("u7").returnStore)
-    println(routerInfo("u8").returnStore)
+    for (i <- (0 until 1000)) {
+      println(routerInfo(s"u${i}").returnStore)
+    }
 
-
+    for (i <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${i}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
+    for (i <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${999 - i}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
+    for (i <- (0 until 100)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${1000}")) // RETRIEVE_FAILURE
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_FAILURE)
+    }
+    for (i <- (0 until 10); j <- (0 until 1000)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${j}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
+    for (i <- (0 until 1000); j <- (0 until 10)) {
+      m = router.sendMessage(USER, s"u${i}", new Message(USER, RETRIEVE, s"key${j}")) // RETRIEVE_SUCCESS
+      println(s"${i}: " + m.messageType + " " + m.data)
+      assert(m.messageType == RETRIEVE_SUCCESS)
+    }
 
   }
 }

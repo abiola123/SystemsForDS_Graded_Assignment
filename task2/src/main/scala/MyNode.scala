@@ -1,4 +1,4 @@
-// YOUR_FULL_NAME_HERE
+// ABIOLA ADEYE - 282145
 package task2
 
 import scala.collection.mutable.Queue
@@ -17,11 +17,6 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
     val USER = "USER"
     val nodes_may_fail = 4
 
-      // //put initial neighbours in the queue and in the set
-                // neighbours.foreach(x=> {
-                //     visited += x
-                //     queue += x
-                // })
 
     override def onReceive(from: String, message: Message): Message = {
         /* 
@@ -40,10 +35,8 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
             new Message(id, NEIGHBOURS_RESPONSE, neighbours.mkString(" "))
         }
         else if (message.messageType == RETRIEVE) { // Request to get the value
-            println("before")
             val key = message.data // This is the key
             val value = getKey(key) // Check if the key is present on the node
-            println("after")
             var response : Message = new Message("", "", "")
 
             value match {
@@ -108,18 +101,19 @@ class MyNode(id: String, memory: Int, neighbours: Vector[String], router: Router
                 if(storedOnSelf) {
                     storedOn.add(this.id)
                 }
-                while(!queue.isEmpty && storedOn.size < 6) {
+                while(!queue.isEmpty && storedOn.size < 5) {
                     val nextElem = queue.dequeue()
                     val responseFromNxt = router.sendMessage(this.id, nextElem, new Message(this.id,STORE,message.data))
                     val responseType = responseFromNxt.messageType
                     if(responseType == STORE_SUCCESS) {
                         storedOn.add(nextElem) 
-                        if(storedOn.size == 6) {
+                        if(storedOn.size == 5) {
                             response = new Message(responseFromNxt.source , STORE_SUCCESS , responseFromNxt.data )
                         }
                         
                     }  
-                        //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
+                    
+                    //if we got a failure, we have to extract all the elements from the neighbours sent in the response and add them to our queue and array (if they have not been discovered yet)
                     val newNeighbours = responseFromNxt.data.split(" ")
                     newNeighbours.foreach(x => {
                         if(!visited.contains(x)) {
