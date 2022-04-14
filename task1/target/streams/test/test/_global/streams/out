@@ -1,27 +1,39 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CorrectnessTests, org.scalatest.tools.Framework$$anon$1@774c3330, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CorrectnessTests, org.scalatest.tools.Framework$$anon$1@1b8433cd, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mCorrectnessTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[33m- Counting Number of Vertices !!! IGNORED !!![0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[33m- Correctness of mmMapper !!! IGNORED !!![0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[33m- Correctness of mmReducer: value > 0 !!! IGNORED !!![0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[33m- Correctness of mmReducer: value = 0 !!! IGNORED !!![0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m- Correct 4-hop neighbors for a ring of size 4 *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.IllegalArgumentException:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.xbean.asm5.ClassReader.<init>(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.xbean.asm5.ClassReader.<init>(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.xbean.asm5.ClassReader.<init>(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.ClosureCleaner$.getClassReader(ClosureCleaner.scala:46)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.FieldAccessFinder$$anon$3$$anonfun$visitMethodInsn$2.apply(ClosureCleaner.scala:449)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.FieldAccessFinder$$anon$3$$anonfun$visitMethodInsn$2.apply(ClosureCleaner.scala:432)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap$$anon$1$$anonfun$foreach$2.apply(HashMap.scala:134)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap$$anon$1$$anonfun$foreach$2.apply(HashMap.scala:134)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31mCorrectnessTests *** ABORTED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.ExceptionInInitializerError:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf$.<init>(SparkConf.scala:668)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf$.<clinit>(SparkConf.scala)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf.set(SparkConf.scala:94)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf.set(SparkConf.scala:83)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.sql.SparkSession$Builder$$anonfun$7$$anonfun$apply$6.apply(SparkSession.scala:927)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.sql.SparkSession$Builder$$anonfun$7$$anonfun$apply$6.apply(SparkSession.scala:927)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 6 seconds, 474 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 4, pending 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
-[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
-[0m[[0m[31merror[0m] [0m[0m	CorrectnessTests[0m
-[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  Cause: java.net.UnknownHostException: abiolas-xps: abiolas-xps: Name or service not known[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1646)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.findLocalInetAddress(Utils.scala:915)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress$lzycompute(Utils.scala:908)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress(Utils.scala:908)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$$anonfun$localCanonicalHostName$1.apply(Utils.scala:965)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$$anonfun$localCanonicalHostName$1.apply(Utils.scala:965)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.Option.getOrElse(Option.scala:121)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.localCanonicalHostName(Utils.scala:965)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.internal.config.package$.<init>(package.scala:282)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.internal.config.package$.<clinit>(package.scala)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  Cause: java.net.UnknownHostException: abiolas-xps: Name or service not known[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1519)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1641)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.findLocalInetAddress(Utils.scala:915)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress$lzycompute(Utils.scala:908)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress(Utils.scala:908)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.util.Utils$$anonfun$localCanonicalHostName$1.apply(Utils.scala:965)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m

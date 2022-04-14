@@ -7339,3 +7339,33 @@ scala.reflect.internal.FatalError: bad constant pool tag 19 at byte 57
 2022.04.13 22:15:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/project/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
 2022.04.13 22:15:51 INFO  time: Connected to build server in 0.27s[0m
 2022.04.13 22:15:51 INFO  Connected to Build server: Bloop v1.4.13[0m
+2022.04.13 22:15:58 INFO  shutting down Metals[0m
+2022.04.13 22:15:58 INFO  Shut down connection with build server.[0m
+2022.04.13 22:15:58 INFO  Shut down connection with build server.[0m
+2022.04.13 22:15:58 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/lib/src.zip. Java symbols will not be available.[0m
+2022.04.14 12:30:01 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.metals/lsp.trace.json or /home/adeye/.cache/metals/lsp.trace.json[0m
+2022.04.14 12:30:01 INFO  logging to file /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.metals/metals.log[0m
+2022.04.14 12:30:01 INFO  Started: Metals version 0.11.2 in workspace '/home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1' for client Visual Studio Code 1.66.2.[0m
+2022.04.14 12:30:01 INFO  Parse release: 11.0.14.1[0m
+2022.04.14 12:30:03 INFO  time: initialize in 1.87s[0m
+2022.04.14 12:30:04 INFO  Attempting to connect to the build server...[0m
+2022.04.14 12:30:03 INFO  skipping build import with status 'Installed'[0m
+2022.04.14 12:30:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
+2022.04.14 12:30:03 INFO  Attempting to connect to the build server...[0m
+2022.04.14 12:30:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/adeye/Documents/EPFL/MA2/Systems/Assignment/task1/project/.metals/bsp.trace.json or /home/adeye/.cache/metals/bsp.trace.json[0m
+2022.04.14 12:30:03 INFO  time: Connected to build server in 0.27s[0m
+2022.04.14 12:30:03 INFO  Connected to Build server: Bloop v1.4.13[0m
+2022.04.14 12:30:07 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/lib/src.zip. Java symbols will not be available.[0m
+Apr 14, 2022 12:30:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2022.04.14 12:30:07 INFO  time: indexed workspace in 3.87s[0m
+2022.04.14 12:30:08 INFO  compiling task1 (1 scala source)[0m
+2022.04.14 12:30:10 INFO  time: compiled task1 in 1.89s[0m
+2022.04.14 12:30:10 INFO  compiling task1-test (1 scala source)[0m
+2022.04.14 12:30:10 INFO  time: compiled task1-test in 0.98s[0m
+2022.04.14 12:30:14 INFO  compiling task1-test (1 scala source)[0m
+2022.04.14 12:30:18 INFO  time: compiled task1-test in 4.1s[0m
+Apr 14, 2022 12:30:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21
+2022.04.14 12:30:26 INFO  time: code lens generation in 14s[0m
+2022.04.14 12:30:26 INFO  time: code lens generation in 14s[0m
