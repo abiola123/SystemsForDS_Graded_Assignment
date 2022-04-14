@@ -88,15 +88,18 @@ object FourHops {
     greater than 0 else let it be 0. Refer to test3 and test4 for an example case.
     */
     def mmReducer(productElements: ((Int, Int), Iterable[(Int, Int)])): (Int, Int, Int) = {
-        // we go through our iterable and verify if we have common indices for both matrices. If it is the case, then a path exists
+        // we go through our iterable and verify if we have common indices for both matrices. If it is the case, then a path exists between them and we should return 1
         val index = productElements._1
         val elements = productElements._2
 
         val grouped = elements.groupBy(_._1)
 
+        //get all elements in the first matrix and in the second matrix respectively
         val matrix_a = grouped.getOrElse(1,List[(Int,Int)]()).map(_._2).toSet
         val matrix_b = grouped.getOrElse(0,List[(Int,Int)]()).map(_._2).toSet
 
+
+        //compute intersection between both matrices and see if there is at least one common element
         val value = matrix_a.intersect(matrix_b).size
         (index._1,index._2,value)
 
@@ -117,11 +120,12 @@ object FourHops {
     */
     def matrixMultiply(matrix: GRAPH, N: Int): GRAPH = {
 
+        //apply mapper that we implemented. We use flatmap in order to avoid having lists of lists and to prepare elements for the group by key
         val one = matrix.flatMap(x => mmMapper(N,x)).groupByKey()
 
+        //apply reducer that we implemented for each key and remove elements that are equal to zero. Then keep only the indices that are non-zero
         val two = one.map(x => mmReducer(x)).filter(_._3 != 0).map(x=> (x._1,x._2))
         
-
         two
 
         

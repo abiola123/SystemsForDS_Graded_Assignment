@@ -16,13 +16,13 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }   
 
     //test 1
-    ignore("Counting Number of Vertices") {
+    test("Counting Number of Vertices") {
         val graph = spark.sparkContext.parallelize(List((1,2),(2,3),(3,1)))
         assert(FourHops.countVertices(graph) == 3)
     }
 
     //test 2
-    ignore("Correctness of mmMapper") {
+    test("Correctness of mmMapper") {
         val ans = FourHops.mmMapper(3, (1, 2))
         println(ans)
         val truth = List(((1,0),(1,2)), ((0,2),(0,1)), ((1,1),(1,2)), ((1,2),(0,1)), ((1,2),(1,2)), ((2,2),(0,1)))
@@ -30,7 +30,7 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }
     
     //test 3
-    ignore("Correctness of mmReducer: value > 0") {
+    test("Correctness of mmReducer: value > 0") {
         val indexes = (1,3) 
         val iterables = List((1,2), (0,2))
         val truth = (1, 3, 1)
@@ -38,7 +38,7 @@ class CorrectnessTests extends FunSuite with BeforeAndAfterAll {
     }
 
     //test 4
-    ignore("Correctness of mmReducer: value = 0") {
+    test("Correctness of mmReducer: value = 0") {
         val indexes = (2,0) 
         val iterables = List((1,0), (0,2))
         val truth = (2, 0, 0)
